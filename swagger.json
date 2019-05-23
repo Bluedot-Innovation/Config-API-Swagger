@@ -2442,7 +2442,7 @@
       },
       "delete" : {
         "tags" : [ "users" ],
-        "summary" : "deletes a user",
+        "summary" : "Delete a user",
         "operationId" : "deleteUser",
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -2818,7 +2818,7 @@
         }, {
           "name" : "userId",
           "in" : "path",
-          "description" : "THe identifier of user to be patched.",
+          "description" : "The identifier of user to be patched.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -7424,33 +7424,33 @@
           "major" : {
             "type" : "integer",
             "example" : 20,
-            "description" : "The major value is an integer that can range from 0 to 65535; it identifies a grouping of iBeacons within a proximityUUID. For example; a Sanfransico location can be assigned 1 and a Melbourne location can be assigned 2.",
+            "description" : "Required if the beaconType is either IOS or Both. The major value is an integer that can range from 0 to 65535; it identifies a grouping of iBeacons within a proximityUUID. For example; a Sanfransico location can be assigned 1 and a Melbourne location can be assigned 2.",
             "minimum" : 0,
             "maximum" : 65535
           },
           "minor" : {
             "type" : "integer",
             "example" : 10,
-            "description" : "The minor value is an integer that can range from 0 to 65535; it identifies a specific iBeacon within a proximityUUID and major value. For example; an iBeacon in a Sanfrancisco location can have 1 for major value and 25 as a minor value.",
+            "description" : "Required if the beaconType is either IOS or Both. The minor value is an integer that can range from 0 to 65535; it identifies a specific iBeacon within a proximityUUID and major value. For example; an iBeacon in a Sanfrancisco location can have 1 for major value and 25 as a minor value.",
             "minimum" : 0,
             "maximum" : 65535
           },
           "macAddress" : {
             "type" : "string",
             "example" : "00-14-22-01-23-45",
-            "description" : "This is the hardware address of the Bluetooth Beacon. The MAC address can be obtained from the manufacturer of a Beacon or using the configuration app provided by the manufacturer. An example of Mac Address is ’00-15-E9-2B-99-3C’."
+            "description" : "Required if the beaconType is either Android or Both. This is the hardware address of the Bluetooth Beacon. The MAC address can be obtained from the manufacturer of a Beacon or using the configuration app provided by the manufacturer. An example of Mac Address is ’00-15-E9-2B-99-3C’."
           },
           "txPower" : {
             "type" : "integer",
             "example" : -10,
-            "description" : "The Tx Power (transmit power) is a configuration setting common to all Bluetooth Beacons. This is set by the Beacon manufacturer and may be shown in the documentation or be configurable with a supplied tool. The range of Tx Power is -100 to 0.",
+            "description" : "Required if the beaconType is either Android or Both. The Tx Power (transmit power) is a configuration setting common to all Bluetooth Beacons. This is set by the Beacon manufacturer and may be shown in the documentation or be configurable with a supplied tool. The range of Tx Power is -100 to 0.",
             "minimum" : -100,
             "maximum" : 0
           },
           "proximityUUID" : {
             "type" : "string",
             "example" : "de305d54-75b4-431b-adb2-eb6b9e546014",
-            "description" : "A value that encapsulates a group of iBeacons. ProximityUUID is specific to the Apple iBeacon standard and the Bluedot Point SDK for Android does not use this to identify or trigger a Beacon. It is recommended to have the same proximityUUID for all iBeacons deployed within a given organization and use major and minor values to identify a specific Beacon. An example of a proximityUUID is “de305d54-75b4-431b-adb2-eb6b9e546014”. A proximityUUID is required to create an iBeacon in Bluedot Systems. The proximityUUID can be obtained from the manufacturer of an iBeacon or using a configuration app provided by the manufacturer.",
+            "description" : "Required if the beaconType is either IOS or Both. A value that encapsulates a group of iBeacons. ProximityUUID is specific to the Apple iBeacon standard and the Bluedot Point SDK for Android does not use this to identify or trigger a Beacon. It is recommended to have the same proximityUUID for all iBeacons deployed within a given organization and use major and minor values to identify a specific Beacon. An example of a proximityUUID is “de305d54-75b4-431b-adb2-eb6b9e546014”. A proximityUUID is required to create an iBeacon in Bluedot Systems. The proximityUUID can be obtained from the manufacturer of an iBeacon or using a configuration app provided by the manufacturer.",
             "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
           },
           "beaconType" : {
@@ -7880,7 +7880,7 @@
         "count" : {
           "type" : "number",
           "example" : 350.0,
-          "description" : "the number of zones in a cluster"
+          "description" : "The number of zones in a cluster"
         },
         "additionalCount" : {
           "type" : "boolean",
@@ -7894,10 +7894,11 @@
       "properties" : {
         "count" : {
           "type" : "number",
-          "example" : 400.0
+          "example" : 400.0,
+          "description" : "Number of zones in a Project"
         }
       },
-      "description" : "Number of zones in a Project"
+      "description" : "Number of zones in a project"
     },
     "ProjectPermission" : {
       "type" : "object",
@@ -7932,7 +7933,7 @@
         },
         "webhooks" : {
           "type" : "array",
-          "description" : "objects that specify details on how webhook should be passed.",
+          "description" : "Objects that specify details on how webhook should be passed.",
           "items" : {
             "$ref" : "#/definitions/WebhookObject"
           }
@@ -7994,7 +7995,7 @@
         "accountId" : {
           "type" : "string",
           "example" : "fd53348f-8dfb-4213-b154-ec0b22a2f15f",
-          "description" : "THe identifier of the account that the user belongs to.",
+          "description" : "The identifier of the account that the user belongs to.",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'"
         },
         "projectPermissions" : {
