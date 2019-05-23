@@ -11,6 +11,11 @@
     "license" : {
       "name" : "Apache 2.0",
       "url" : "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "x-logo": {
+      "url": "https://raw.githubusercontent.com/Bluedot-Innovation/Config-API-Swagger/master/images/img-logo-be.png",
+      "backgroundColor": "#FFFFFF",
+      "altText": "Petstore logo"
     }
   },
   "host" : "config.bluedot.io",
