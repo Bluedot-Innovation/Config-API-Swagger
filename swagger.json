@@ -75,7 +75,7 @@
     "/password/token-request" : {
       "post" : {
         "tags" : [ "credentials" ],
-        "summary" : "Triggers a password reset token",
+        "summary" : "Trigger a password reset token",
         "operationId" : "createTokenRequest",
         "consumes" : [ "application/json" ],
         "parameters" : [ {
@@ -1046,7 +1046,7 @@
     "/sessions" : {
       "post" : {
         "tags" : [ "sessions" ],
-        "summary" : "Authenticates a user",
+        "summary" : "Authenticate a user",
         "operationId" : "createSession",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -1218,7 +1218,7 @@
       },
       "put" : {
         "tags" : [ "sessions" ],
-        "summary" : "Refreshes a session",
+        "summary" : "Refreshe a session",
         "operationId" : "refreshSession",
         "parameters" : [ {
           "name" : "Authorization",
@@ -1398,7 +1398,7 @@
       },
       "delete" : {
         "tags" : [ "sessions" ],
-        "summary" : "Logs a user out",
+        "summary" : "Log a user out",
         "operationId" : "deleteSession",
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -2069,7 +2069,7 @@
     "/users/{userId}" : {
       "get" : {
         "tags" : [ "users" ],
-        "summary" : "Find user by ID",
+        "summary" : "Find user by userId",
         "description" : "Returns a single user",
         "operationId" : "getUserById",
         "produces" : [ "application/json" ],
@@ -2082,7 +2082,7 @@
         }, {
           "name" : "userId",
           "in" : "path",
-          "description" : "ID of user to return",
+          "description" : "The identifier of the user to return.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -2266,7 +2266,7 @@
         }, {
           "name" : "userId",
           "in" : "path",
-          "description" : "ID of user to update",
+          "description" : "The identifier of the user being updated.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -2454,7 +2454,7 @@
         }, {
           "name" : "userId",
           "in" : "path",
-          "description" : "userId",
+          "description" : "The identifier of user to be deleted.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -2633,7 +2633,7 @@
         }, {
           "name" : "userId",
           "in" : "path",
-          "description" : "ID of user to update",
+          "description" : "The identoifier of the user.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -2805,7 +2805,7 @@
       },
       "patch" : {
         "tags" : [ "users" ],
-        "summary" : "update a user",
+        "summary" : "Update a user",
         "operationId" : "updateUser",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -2818,7 +2818,7 @@
         }, {
           "name" : "userId",
           "in" : "path",
-          "description" : "userId",
+          "description" : "THe identifier of user to be patched.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -3466,7 +3466,7 @@
         }, {
           "name" : "projectId",
           "in" : "path",
-          "description" : "ID of project to return",
+          "description" : "The identifier of the project being returned.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -3650,14 +3650,14 @@
         }, {
           "name" : "projectId",
           "in" : "path",
-          "description" : "ID of project to return",
+          "description" : "The identifier of the project being updated.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "Pro obtject that needs to be added",
+          "description" : "Project obtject that needs to be added",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/Project"
@@ -3826,7 +3826,7 @@
       },
       "delete" : {
         "tags" : [ "projects" ],
-        "summary" : "deletes a project",
+        "summary" : "Delete a project",
         "operationId" : "deleteProject",
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -3838,7 +3838,7 @@
         }, {
           "name" : "projectId",
           "in" : "path",
-          "description" : "projectId",
+          "description" : "The identifier of the project being deleted.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -4017,7 +4017,7 @@
         }, {
           "name" : "projectId",
           "in" : "path",
-          "description" : "ID of project to return",
+          "description" : "The identifier of the project.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -4060,7 +4060,7 @@
       },
       "patch" : {
         "tags" : [ "projects" ],
-        "summary" : "update an project",
+        "summary" : "Update an project",
         "operationId" : "updateProject",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -4073,7 +4073,7 @@
         }, {
           "name" : "projectId",
           "in" : "path",
-          "description" : "projectId",
+          "description" : "The identifier of the project being patched.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -4266,7 +4266,7 @@
         }, {
           "name" : "projectId",
           "in" : "query",
-          "description" : "ID of zone to return",
+          "description" : "The identifier of the project.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -4492,7 +4492,7 @@
       },
       "post" : {
         "tags" : [ "zones" ],
-        "summary" : "Add a zone to the application",
+        "summary" : "Add a zone to the project",
         "operationId" : "addZone",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -4747,7 +4747,7 @@
     "/zones/{zoneId}" : {
       "get" : {
         "tags" : [ "zones" ],
-        "summary" : "Find zone by ID",
+        "summary" : "Find a zone by zoneId",
         "description" : "Returns a single zone",
         "operationId" : "getZoneById",
         "produces" : [ "application/json" ],
@@ -4760,7 +4760,7 @@
         }, {
           "name" : "zoneId",
           "in" : "path",
-          "description" : "ID of zone to return",
+          "description" : "The identifier of the zone to return.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -4942,7 +4942,7 @@
         }, {
           "name" : "zoneId",
           "in" : "path",
-          "description" : "ID of zone to return",
+          "description" : "The identifier of the zone being updated.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -5118,7 +5118,7 @@
       },
       "delete" : {
         "tags" : [ "zones" ],
-        "summary" : "Deletes a zone",
+        "summary" : "Delete a zone",
         "operationId" : "deleteZone",
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -5309,7 +5309,7 @@
         }, {
           "name" : "zoneId",
           "in" : "path",
-          "description" : "ID of zone to return",
+          "description" : "The identifier of the zone.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -5349,7 +5349,7 @@
       },
       "patch" : {
         "tags" : [ "zones" ],
-        "summary" : "update a zone",
+        "summary" : "Update a zone",
         "operationId" : "updateZone",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -5542,7 +5542,7 @@
     "/zones/clusters" : {
       "get" : {
         "tags" : [ "zones" ],
-        "summary" : "Get zone clusters project Id",
+        "summary" : "Get zone clusters by project Id",
         "description" : "Returns an array of zoneClusters",
         "operationId" : "getZoneClusters",
         "produces" : [ "application/json" ],
@@ -5555,7 +5555,7 @@
         }, {
           "name" : "projectId",
           "in" : "query",
-          "description" : "ID of zone to return",
+          "description" : "The identifier of the project being searched.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -5814,7 +5814,7 @@
         }, {
           "name" : "projectId",
           "in" : "query",
-          "description" : "ID of zone to return",
+          "description" : "The identifier of the project being searched.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -6512,7 +6512,7 @@
     "/beacons/{beaconId}" : {
       "get" : {
         "tags" : [ "beacons" ],
-        "summary" : "Find a beacon by ID",
+        "summary" : "Find a beacon by beaconId",
         "description" : "Returns a single beacon",
         "operationId" : "getBeaconById",
         "produces" : [ "application/json" ],
@@ -6525,7 +6525,7 @@
         }, {
           "name" : "beaconId",
           "in" : "path",
-          "description" : "ID of beacon to return",
+          "description" : "The identifier of the beacon to return.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -6693,7 +6693,7 @@
       },
       "put" : {
         "tags" : [ "beacons" ],
-        "summary" : "Updates a complete beacon",
+        "summary" : "Update a complete beacon",
         "operationId" : "replaceBeacon",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -6882,7 +6882,7 @@
       },
       "delete" : {
         "tags" : [ "beacons" ],
-        "summary" : "deletes a beacon",
+        "summary" : "Delete a beacon",
         "operationId" : "deleteBeacon",
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -7076,7 +7076,7 @@
         }, {
           "name" : "beaconId",
           "in" : "path",
-          "description" : "ID of beacon to return",
+          "description" : "The identifier of the beacon.",
           "required" : true,
           "type" : "string",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
@@ -7477,7 +7477,8 @@
         "properties" : {
           "_id" : {
             "type" : "string",
-            "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4"
+            "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4",
+            "description" : "The identifier of the beacon."
           }
         }
       }, {
@@ -7747,6 +7748,7 @@
         },
         "type" : {
           "type" : "string",
+          "description" : "Type of the trigger. Only support 'trigger' for now.",
           "enum" : [ "trigger" ]
         },
         "headers" : {
@@ -7754,6 +7756,7 @@
           "example" : {
             "header" : "string"
           },
+          "description" : "Custom header sent along with the webhook request.",
           "additionalProperties" : {
             "type" : "string"
           }
@@ -7800,7 +7803,8 @@
         "properties" : {
           "_id" : {
             "type" : "string",
-            "example" : "280f5dab-df8d-4357-899f-5f718338be7b"
+            "example" : "280f5dab-df8d-4357-899f-5f718338be7b",
+            "description" : "The identifier of the Geofeature."
           }
         }
       }, {
@@ -7899,7 +7903,9 @@
       "type" : "object",
       "properties" : {
         "projectId" : {
-          "type" : "string"
+          "type" : "string",
+          "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4",
+          "description" : "The identifier of the project associated with an account."
         },
         "permissionLevel" : {
           "type" : "string",
@@ -7944,7 +7950,8 @@
         "properties" : {
           "_id" : {
             "type" : "string",
-            "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4"
+            "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4",
+            "description" : "The identifier of the project."
           }
         }
       }, {
@@ -8006,7 +8013,8 @@
         "properties" : {
           "_id" : {
             "type" : "string",
-            "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4"
+            "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4",
+            "description" : "The identifier of the user."
           }
         }
       }, {
@@ -8073,7 +8081,8 @@
       "properties" : {
         "_id" : {
           "type" : "string",
-          "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4"
+          "example" : "ec09f506-44c8-482d-92d0-4ee57d5c42b4",
+          "description" : "The identifier of the zone."
         },
         "name" : {
           "type" : "string",
