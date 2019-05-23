@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "Bluedot Innovation Configuration API\n[https://bluedot.io](https://bluedot.io)\nAuthentication: Use the sessions endpoint to obtain an accessToken, and then supply it in the Authorization header for subsequent requests\n",
-    "version" : "1.1.37",
+    "version" : "1.1.39",
     "title" : "Bluedot Innovation Configuration API",
     "termsOfService" : "https://bluedot.io/terms/",
     "contact" : {
@@ -12,14 +12,14 @@
       "name" : "Apache 2.0",
       "url" : "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-logo": {
-      "url": "https://raw.githubusercontent.com/Bluedot-Innovation/Config-API-Swagger/master/images/img-logo-be.png",
-      "backgroundColor": "#FFFFFF",
-      "altText": "Petstore logo"
+    "x-logo" : {
+      "url" : "https://raw.githubusercontent.com/Bluedot-Innovation/Config-API-Swagger/master/images/img-logo-be.png",
+      "backgroundColor" : "#FFFFFF",
+      "altText" : "Bluedot logo"
     }
   },
   "host" : "config.bluedot.io",
-  "basePath" : "/",
+  "basePath" : "/prod1",
   "tags" : [ {
     "name" : "sessions",
     "description" : "Session management",
@@ -796,7 +796,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -825,7 +825,8 @@
               "type" : "array",
               "items" : {
                 "type" : "string"
-              }
+              },
+              "example" : [ "lines", "borders", "stripes" ]
             }
           },
           "400" : {
@@ -1222,13 +1223,13 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
           "in" : "body",
           "name" : "refreshToken",
-          "description" : "RefreshToken",
+          "description" : "a special token that can be used to obtain a renewed access token.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/RefreshToken"
@@ -1403,7 +1404,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         } ],
@@ -1640,7 +1641,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         } ],
@@ -1820,7 +1821,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -2075,7 +2076,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -2259,7 +2260,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -2447,7 +2448,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -2626,7 +2627,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -2811,7 +2812,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -3017,7 +3018,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -3204,7 +3205,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -3459,7 +3460,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -3643,7 +3644,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -3831,7 +3832,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -4010,7 +4011,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -4066,7 +4067,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -4259,7 +4260,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -4498,7 +4499,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -4753,7 +4754,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -4935,7 +4936,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -5123,7 +5124,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -5302,7 +5303,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -5355,7 +5356,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -5548,7 +5549,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -5807,7 +5808,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -6062,7 +6063,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -6249,7 +6250,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -6518,7 +6519,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -6699,7 +6700,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -6887,7 +6888,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -7069,7 +7070,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -7125,7 +7126,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "access token",
+          "description" : "Bearer Token. Format: Bearer {{access_token}}",
           "required" : true,
           "type" : "string"
         }, {
@@ -7331,6 +7332,7 @@
       }
     },
     "PatchDocument" : {
+      "type" : "object",
       "required" : [ "op", "path" ],
       "properties" : {
         "op" : {
@@ -7372,7 +7374,8 @@
           "minimum" : -90,
           "maximum" : 90
         }
-      }
+      },
+      "description" : "A point is an object that stores spatial geographic information (i.e longitude, latitude)"
     },
     "Circle" : {
       "allOf" : [ {
@@ -7410,42 +7413,50 @@
         "properties" : {
           "name" : {
             "type" : "string",
-            "example" : "beacon name"
+            "example" : "beacon name",
+            "description" : "A distinct name for the Beacon being created."
           },
           "description" : {
             "type" : "string",
-            "example" : "beacon description"
+            "example" : "beacon description",
+            "description" : "This optional field can be used to store any additional information such as the descriptive location of the Beacon."
           },
           "major" : {
             "type" : "integer",
             "example" : 20,
+            "description" : "The major value is an integer that can range from 0 to 65535; it identifies a grouping of iBeacons within a proximityUUID. For example; a Sanfransico location can be assigned 1 and a Melbourne location can be assigned 2.",
             "minimum" : 0,
             "maximum" : 65535
           },
           "minor" : {
             "type" : "integer",
             "example" : 10,
+            "description" : "The minor value is an integer that can range from 0 to 65535; it identifies a specific iBeacon within a proximityUUID and major value. For example; an iBeacon in a Sanfrancisco location can have 1 for major value and 25 as a minor value.",
             "minimum" : 0,
             "maximum" : 65535
           },
           "macAddress" : {
             "type" : "string",
-            "example" : "00-14-22-01-23-45"
+            "example" : "00-14-22-01-23-45",
+            "description" : "This is the hardware address of the Bluetooth Beacon. The MAC address can be obtained from the manufacturer of a Beacon or using the configuration app provided by the manufacturer. An example of Mac Address is ’00-15-E9-2B-99-3C’."
           },
           "txPower" : {
             "type" : "integer",
             "example" : -10,
+            "description" : "The Tx Power (transmit power) is a configuration setting common to all Bluetooth Beacons. This is set by the Beacon manufacturer and may be shown in the documentation or be configurable with a supplied tool. The range of Tx Power is -100 to 0.",
             "minimum" : -100,
             "maximum" : 0
           },
           "proximityUUID" : {
             "type" : "string",
             "example" : "de305d54-75b4-431b-adb2-eb6b9e546014",
+            "description" : "A value that encapsulates a group of iBeacons. ProximityUUID is specific to the Apple iBeacon standard and the Bluedot Point SDK for Android does not use this to identify or trigger a Beacon. It is recommended to have the same proximityUUID for all iBeacons deployed within a given organization and use major and minor values to identify a specific Beacon. An example of a proximityUUID is “de305d54-75b4-431b-adb2-eb6b9e546014”. A proximityUUID is required to create an iBeacon in Bluedot Systems. The proximityUUID can be obtained from the manufacturer of an iBeacon or using a configuration app provided by the manufacturer.",
             "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
           },
           "beaconType" : {
             "type" : "string",
             "example" : "IOS",
+            "description" : "The target mobile platform for the Beacon",
             "enum" : [ "IOS", "Android", "Both" ]
           },
           "location" : {
@@ -7453,7 +7464,8 @@
           },
           "accountId" : {
             "type" : "string",
-            "example" : "11111111-75b4-431b-adb2-eb6b9e546014"
+            "example" : "11111111-75b4-431b-adb2-eb6b9e546014",
+            "description" : "The identifier of the account."
           }
         }
       }, { } ],
@@ -7756,11 +7768,13 @@
       "properties" : {
         "name" : {
           "type" : "string",
-          "example" : "default name"
+          "example" : "default name",
+          "description" : "Name for geafeature being created."
         },
         "type" : {
           "type" : "string",
           "example" : "circle",
+          "description" : "Type of geofeatures and must be one of these options: circle, geoline, beacon, polygon, boundingBox",
           "enum" : [ "circle", "geoline", "beacon", "polygon", "boundingBox" ]
         }
       },
@@ -7816,6 +7830,7 @@
         "type" : {
           "type" : "string",
           "example" : "message",
+          "description" : "Type of an action and must be either message or url",
           "enum" : [ "message", "url" ]
         }
       },
@@ -7832,6 +7847,7 @@
       "properties" : {
         "type" : {
           "type" : "string",
+          "description" : "Type of a condition and must be one of these options: speed, travelDirection, travelPath, timeActive, and dayRange.",
           "enum" : [ "speed", "travelDirection", "travelPath", "timeActive", "dayRange" ]
         }
       },
@@ -7854,11 +7870,13 @@
       "properties" : {
         "point" : {
           "type" : "string",
-          "example" : "150.34565,-24.44556"
+          "example" : "150.34565,-24.44556",
+          "description" : "The location of the cluster."
         },
         "count" : {
           "type" : "number",
-          "example" : 350.0
+          "example" : 350.0,
+          "description" : "the number of zones in a cluster"
         },
         "additionalCount" : {
           "type" : "boolean",
@@ -7896,16 +7914,19 @@
       "properties" : {
         "name" : {
           "type" : "string",
-          "example" : "A Sample Project"
+          "example" : "A Sample Project",
+          "description" : "Name of the project."
         },
         "nextRuleUpdateInterval" : {
           "type" : "integer",
           "example" : 600,
+          "description" : "This is how frequently the Project tries to download the latest locations configured.",
           "minimum" : 300,
           "maximum" : 172800
         },
         "webhooks" : {
           "type" : "array",
+          "description" : "objects that specify details on how webhook should be passed.",
           "items" : {
             "$ref" : "#/definitions/WebhookObject"
           }
@@ -7936,34 +7957,42 @@
       "properties" : {
         "email" : {
           "type" : "string",
-          "example" : "johnsmith@company.com"
+          "example" : "johnsmith@company.com",
+          "description" : "Email address of the user"
         },
         "username" : {
           "type" : "string",
-          "example" : "johnsmith@company.com"
+          "example" : "johnsmith@company.com",
+          "description" : "Email address is also used as username."
         },
         "firstName" : {
           "type" : "string",
-          "example" : "John"
+          "example" : "John",
+          "description" : "First name of the user."
         },
         "lastName" : {
           "type" : "string",
-          "example" : "Smith"
+          "example" : "Smith",
+          "description" : "Last name of the user."
         },
         "phoneNumber" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Phone number of the user."
         },
         "isAdmin" : {
           "type" : "boolean",
-          "example" : true
+          "example" : true,
+          "description" : "The user is an admin or not."
         },
         "accountId" : {
           "type" : "string",
           "example" : "fd53348f-8dfb-4213-b154-ec0b22a2f15f",
+          "description" : "THe identifier of the account that the user belongs to.",
           "pattern" : "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'"
         },
         "projectPermissions" : {
           "type" : "array",
+          "description" : " The level of permission provided to the user per project.",
           "items" : {
             "$ref" : "#/definitions/ProjectPermission"
           }
@@ -7990,14 +8019,16 @@
       "properties" : {
         "name" : {
           "type" : "string",
-          "example" : "Example zone name"
+          "example" : "Example zone name",
+          "description" : "Name of the zone."
         },
         "minimumRetriggerTime" : {
           "$ref" : "#/definitions/MinimumRetriggerTime"
         },
         "triggerOnExit" : {
           "type" : "boolean",
-          "example" : true
+          "example" : true,
+          "description" : "Trigger an event as the device is leaving the zone."
         },
         "geofeatures" : {
           "type" : "array",
@@ -8016,8 +8047,10 @@
         },
         "tags" : {
           "type" : "array",
+          "example" : [ "lines", "borders", "stripes" ],
           "items" : {
-            "type" : "string"
+            "type" : "string",
+            "description" : "custom tags"
           }
         },
         "actions" : {
@@ -8093,29 +8126,30 @@
       "properties" : {
         "email" : {
           "type" : "string",
-          "example" : "swagger@bluedot.io"
+          "example" : "swagger@bluedot.io",
+          "description" : "Email address of the account to login"
         },
         "password" : {
           "type" : "string",
-          "example" : "password123"
+          "example" : "password123",
+          "description" : "Password of the account to login"
         }
       }
     },
     "AuthenticationTokens" : {
       "type" : "object",
       "properties" : {
-        "status" : {
-          "type" : "string",
-          "example" : "success"
-        },
         "idToken" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "The ID Token is a JSON Web Token (JWT) that contains user profile information (such as the user's name and email)."
         },
         "accessToken" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "An Access Token is a credential that can be used by an application to access an API."
         },
         "refreshToken" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "a special token that can be used to obtain a renewed access token."
         }
       }
     },
@@ -8124,19 +8158,23 @@
       "properties" : {
         "idToken" : {
           "type" : "string",
-          "example" : "eyJraWQiOiJ2VnV5OXhIT00zeVBPeEwwTDFrTmN1aXBFS3Jwd0l0ekhrQ0VKUnpOOXU4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNzc1MTFjNi1hNTQ3LTQxNTgtYmY4ZC0xNzk3Mzg5ZmQ3ZmIiLCJhdWQiOiIzajJldjB1bjZnbnY4NGczM25zZGRoMmJqdSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjAxNWZiMmY5LThhMjItMTFlOC1iMTJkLTc5NDZhZDYxZmM2MyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTMxODczOTI5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTJfOFZLZVBhRUxlIiwibmlja25hbWUiOiIyM2EwMWFmMC0yMzJhLTQ1MTgtOWMwZS0zMjNmYjc3M2Y1ZWYiLCJjb2duaXRvOnVzZXJuYW1lIjoicnlhbkBibHVlZG90LmlvIiwiZXhwIjoxNTMxODc3NTI5LCJpYXQiOjE1MzE4NzM5MjksImVtYWlsIjoicnlhbkBibHVlZG90LmlvIn0.QQodxfgLyfvXoTDFrLEEu7cmUv1p-NLmV1--R8QfkKsSJ2LreJPBmmvhjEf5pYFFVTSuBfDITGxxKQrVbTLrLeWWFsWXxyRWBleNSVwwywGJPaS3Ra26EHjicwMHDY3Ln8B8eJ18oTcj_ZmAf_5z8OXhGxfGngdUxzbRN646OY-0Pki45HQ8e50uKGIHj_RRhWyyRxf27SvFEHAjbUA7QfcbGs1HA1b6oOc7VTCR6Qm8MgYw6jTbwl-8HrIrVicvwPwawmsP59tOsOa-9suBBGw7p2L9cmkBJGEKnhjiM57TXzGFmLKR7-HpxInkITfAry2N_UmzkemL_axbNE38zg"
+          "example" : "eyJraWQiOiJ2VnV5OXhIT00zeVBPeEwwTDFrTmN1aXBFS3Jwd0l0ekhrQ0VKUnpOOXU4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNzc1MTFjNi1hNTQ3LTQxNTgtYmY4ZC0xNzk3Mzg5ZmQ3ZmIiLCJhdWQiOiIzajJldjB1bjZnbnY4NGczM25zZGRoMmJqdSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjAxNWZiMmY5LThhMjItMTFlOC1iMTJkLTc5NDZhZDYxZmM2MyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTMxODczOTI5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTJfOFZLZVBhRUxlIiwibmlja25hbWUiOiIyM2EwMWFmMC0yMzJhLTQ1MTgtOWMwZS0zMjNmYjc3M2Y1ZWYiLCJjb2duaXRvOnVzZXJuYW1lIjoicnlhbkBibHVlZG90LmlvIiwiZXhwIjoxNTMxODc3NTI5LCJpYXQiOjE1MzE4NzM5MjksImVtYWlsIjoicnlhbkBibHVlZG90LmlvIn0.QQodxfgLyfvXoTDFrLEEu7cmUv1p-NLmV1--R8QfkKsSJ2LreJPBmmvhjEf5pYFFVTSuBfDITGxxKQrVbTLrLeWWFsWXxyRWBleNSVwwywGJPaS3Ra26EHjicwMHDY3Ln8B8eJ18oTcj_ZmAf_5z8OXhGxfGngdUxzbRN646OY-0Pki45HQ8e50uKGIHj_RRhWyyRxf27SvFEHAjbUA7QfcbGs1HA1b6oOc7VTCR6Qm8MgYw6jTbwl-8HrIrVicvwPwawmsP59tOsOa-9suBBGw7p2L9cmkBJGEKnhjiM57TXzGFmLKR7-HpxInkITfAry2N_UmzkemL_axbNE38zg",
+          "description" : "The ID Token is a JSON Web Token (JWT) that contains user profile information (such as the user's name and email)."
         },
         "accessToken" : {
           "type" : "string",
-          "example" : "eyJraWQiOiI2T09XbTZDNXRhQmNWbXJ5ZCtFSVZXR1VsT29SN1Jub1NmaXBDVXp0SzZRPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNzc1MTFjNi1hNTQ3LTQxNTgtYmY4ZC0xNzk3Mzg5ZmQ3ZmIiLCJldmVudF9pZCI6IjAxNWZiMmY5LThhMjItMTFlOC1iMTJkLTc5NDZhZDYxZmM2MyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1MzE4NzM5MjksImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMi5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMl84VktlUGFFTGUiLCJleHAiOjE1MzE4Nzc1MjksImlhdCI6MTUzMTg3MzkyOSwianRpIjoiZTgxZGEzMjUtOTU3Yi00NTUwLWFhYjktMjE0NTlmYzMxZTc1IiwiY2xpZW50X2lkIjoiM2oyZXYwdW42Z252ODRnMzNuc2RkaDJianUiLCJ1c2VybmFtZSI6InJ5YW5AYmx1ZWRvdC5pbyJ9.kpdSUqyCZ8VkGtSkgYF7XFGOLSsKCtQ9auK4iQaH90FoOZFK16DmRsZWUMcLDZ64txjjF9_qTGY5I8hAFGsU3GFirnkhWjPGzLvixoMqOFF4enu2MA4Z0LmEItLZyYgSaJIn5HXH57aNCKaeU3QnM7PJVg5NHBTO6MorghPA17_fPbiT96as8-5JQk7V7JoMIAOKYrl8cMDvajrfN3v_Da1N6lKqAi09biKJBMo7j2I7ac8eFxJ1P69FXcWT-FkUTb64BVaIOs2FJEt-7WTFS_OJyuJ1GYv508CzODA62BOvz6uJNJHfvinqy5BIeImsKqpIe-5sux-14p-dRm9dRw"
+          "example" : "eyJraWQiOiI2T09XbTZDNXRhQmNWbXJ5ZCtFSVZXR1VsT29SN1Jub1NmaXBDVXp0SzZRPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNzc1MTFjNi1hNTQ3LTQxNTgtYmY4ZC0xNzk3Mzg5ZmQ3ZmIiLCJldmVudF9pZCI6IjAxNWZiMmY5LThhMjItMTFlOC1iMTJkLTc5NDZhZDYxZmM2MyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1MzE4NzM5MjksImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMi5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMl84VktlUGFFTGUiLCJleHAiOjE1MzE4Nzc1MjksImlhdCI6MTUzMTg3MzkyOSwianRpIjoiZTgxZGEzMjUtOTU3Yi00NTUwLWFhYjktMjE0NTlmYzMxZTc1IiwiY2xpZW50X2lkIjoiM2oyZXYwdW42Z252ODRnMzNuc2RkaDJianUiLCJ1c2VybmFtZSI6InJ5YW5AYmx1ZWRvdC5pbyJ9.kpdSUqyCZ8VkGtSkgYF7XFGOLSsKCtQ9auK4iQaH90FoOZFK16DmRsZWUMcLDZ64txjjF9_qTGY5I8hAFGsU3GFirnkhWjPGzLvixoMqOFF4enu2MA4Z0LmEItLZyYgSaJIn5HXH57aNCKaeU3QnM7PJVg5NHBTO6MorghPA17_fPbiT96as8-5JQk7V7JoMIAOKYrl8cMDvajrfN3v_Da1N6lKqAi09biKJBMo7j2I7ac8eFxJ1P69FXcWT-FkUTb64BVaIOs2FJEt-7WTFS_OJyuJ1GYv508CzODA62BOvz6uJNJHfvinqy5BIeImsKqpIe-5sux-14p-dRm9dRw",
+          "description" : "An Access Token is a credential that can be used by an application to access an API."
         },
-        "expires_in" : {
+        "expiresIn" : {
           "type" : "number",
-          "example" : 3600.0
+          "example" : 3600.0,
+          "description" : "The expiration period of the access token in seconds."
         },
-        "token_type" : {
+        "tokenType" : {
           "type" : "string",
-          "example" : "Bearer"
+          "example" : "Bearer",
+          "description" : "The token type (i.e Bearer)."
         }
       }
     },
@@ -8144,7 +8182,8 @@
       "type" : "object",
       "properties" : {
         "refreshToken" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "a special token that can be used to obtain a renewed access token."
         }
       }
     },
@@ -8152,7 +8191,9 @@
       "type" : "object",
       "properties" : {
         "email" : {
-          "type" : "string"
+          "type" : "string",
+          "example" : "jsmith@bluedot.io",
+          "description" : "Email address of account to be reset"
         }
       }
     },
@@ -8160,13 +8201,18 @@
       "type" : "object",
       "properties" : {
         "email" : {
-          "type" : "string"
+          "type" : "string",
+          "example" : "jsmith@bluedot.io",
+          "description" : "Email address of account to be reset"
         },
         "password" : {
-          "type" : "string"
+          "type" : "string",
+          "example" : "password123",
+          "description" : "New password to be reset. Note: Password length of at least 6 characters, as well as requiring numbers, special characters, uppercase and lowercase letters."
         },
         "verificationCode" : {
           "type" : "string",
+          "example" : "749307",
           "description" : "generated code sent via email"
         }
       }
@@ -8175,14 +8221,19 @@
       "type" : "object",
       "properties" : {
         "email" : {
-          "type" : "string"
+          "type" : "string",
+          "example" : "jsmith@bluedot.io",
+          "description" : "Email address of account to be reset"
         },
         "temporaryPassword" : {
           "type" : "string",
+          "example" : "123456",
           "description" : "generated code sent via email"
         },
         "newPassword" : {
-          "type" : "string"
+          "type" : "string",
+          "example" : "password123",
+          "description" : "New password to be reset. Note: Password length of at least 6 characters, as well as requiring numbers, special characters, uppercase and lowercase letters."
         }
       }
     }
