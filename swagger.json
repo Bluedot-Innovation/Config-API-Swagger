@@ -3018,7 +3018,7 @@
         "parameters" : [ {
           "name" : "Authorization",
           "in" : "header",
-          "description" : "Bearer Token. Format: Bearer {{access_token}}",
+          "description" : "Bearer Token. Format: `Bearer access_token`",
           "required" : true,
           "type" : "string"
         }, {
