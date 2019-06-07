@@ -4,7 +4,7 @@ info:
     Bluedot Innovation Configuration API
     [https://bluedot.io](https://bluedot.io)
     Authentication: Use the sessions endpoint to obtain an accessToken, and then supply it in the Authorization header for subsequent requests
-  version: "1.1.39"
+  version: "1.1.40"
   title: Bluedot Innovation Configuration API
   termsOfService: https://bluedot.io/terms/
   contact:
@@ -109,7 +109,7 @@ paths:
     post:
       tags:
       - credentials
-      summary: Trigger a password reset token
+      summary: Triggers a password reset token
       operationId: createTokenRequest
       consumes:
       - application/json
@@ -278,7 +278,7 @@ paths:
     post:
       tags:
       - credentials
-      summary: Use password reset token to change password
+      summary: Uses password reset token to change password
       operationId: resetPassword
       consumes:
       - application/json
@@ -448,7 +448,7 @@ paths:
     post:
       tags:
       - credentials
-      summary: Use the temporary password to change a newly created user's password
+      summary: Uses the temporary password to change a newly created user's password
       operationId: createNewPassword
       consumes:
       - application/json
@@ -620,7 +620,7 @@ paths:
     get:
       tags:
         - tags
-      summary: Get a list of all tags being used on zones by projectId
+      summary: Gets a list of all tags being used on zones by projectId
       description: Returns tags by projectId
       operationId: getTags
       produces:
@@ -628,7 +628,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -776,7 +776,7 @@ paths:
     post:
       tags:
       - sessions
-      summary: Authenticate a user
+      summary: Authenticates a user
       operationId: createSession
       consumes:
       - application/json
@@ -897,18 +897,18 @@ paths:
     delete:
       tags:
       - sessions
-      summary: Log a user out
+      summary: Logs a user out
       produces:
       - application/json
       operationId: deleteSession
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
       responses:
-        201:
+        200:
           description: User logged out
           headers:
             Access-Control-Allow-Headers:
@@ -976,7 +976,7 @@ paths:
             #end }}'
         responses:
           default:
-            statusCode: '201'
+            statusCode: '200'
             responseParameters:
               method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
@@ -1016,14 +1016,14 @@ paths:
             responseTemplates:
               application/json: "$input.path('$.errorMessage')"
     put:
-      summary: Refreshe a session
+      summary: Refreshes a session
       operationId:  refreshSession
       tags:
       - sessions
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - in: body
@@ -1226,7 +1226,7 @@ paths:
     post:
       tags:
       - users
-      summary: Add a user
+      summary: Adds a user
       operationId: addUser
       consumes:
       - application/json
@@ -1235,7 +1235,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - in: body
@@ -1362,14 +1362,14 @@ paths:
     get:
       tags:
       - users
-      summary: Get all users
+      summary: Gets all users
       operationId: searchUsers
       produces:
       - application/json
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
       responses:
@@ -1515,7 +1515,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: userId
@@ -1640,7 +1640,7 @@ paths:
     put:
       tags:
       - users
-      summary: Update a complete user
+      summary: Updates a complete user
       operationId: replaceUser
       consumes:
       - application/json
@@ -1649,7 +1649,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: userId
@@ -1780,7 +1780,7 @@ paths:
     get:
       tags:
         - users
-      summary: Find user by userId
+      summary: Finds user by userId
       description: Returns a single user
       operationId: getUserById
       produces:
@@ -1788,7 +1788,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: userId
@@ -1914,14 +1914,14 @@ paths:
     delete:
       tags:
         - users
-      summary: Delete a user
+      summary: Deletes a user
       operationId: deleteUser
       produces:
       - application/json
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: userId
@@ -2044,7 +2044,7 @@ paths:
     patch:
       tags:
         - users
-      summary: Update a user
+      summary: Updates a user
       operationId: updateUser
       consumes:
       - application/json
@@ -2053,7 +2053,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: userId
@@ -2229,7 +2229,7 @@ paths:
     post:
       tags:
       - projects
-      summary: Add a project
+      summary: Adds a project
       operationId: addProject
       consumes:
       - application/json
@@ -2238,7 +2238,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - in: body
@@ -2365,12 +2365,12 @@ paths:
     get:
       tags:
       - projects
-      summary: Get all projects by accountId
+      summary: Gets all projects by accountId
       operationId: getProjects
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - in: query
@@ -2530,7 +2530,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -2566,7 +2566,7 @@ paths:
     put:
       tags:
       - projects
-      summary: Update a complete project
+      summary: Updates a complete project
       operationId: replaceProject
       consumes:
       - application/json
@@ -2575,7 +2575,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -2706,7 +2706,7 @@ paths:
     get:
       tags:
         - projects
-      summary: Find project by ID
+      summary: Finds project by ID
       description: Returns a single project
       operationId: getProjectById
       produces:
@@ -2714,7 +2714,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -2840,14 +2840,14 @@ paths:
     delete:
       tags:
         - projects
-      summary: Delete a project
+      summary: Deletes a project
       operationId: deleteProject
       produces:
       - application/json
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -2969,7 +2969,7 @@ paths:
     patch:
       tags:
         - projects
-      summary: Update an project
+      summary: Updates an project
       operationId: updateProject
       consumes:
       - application/json
@@ -2978,7 +2978,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -3146,7 +3146,7 @@ paths:
     post:
       tags:
       - zones
-      summary: Add a zone to the project
+      summary: Adds a zone to the project
       operationId: addZone
       consumes:
       - application/json
@@ -3155,7 +3155,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - in: body
@@ -3282,7 +3282,7 @@ paths:
     get:
       tags:
         - zones
-      summary: Get all zones by project Id
+      summary: Gets all zones by project Id
       description: Returns zones by query / default offset=0 / default limit=100
       operationId: getZones
       produces:
@@ -3290,7 +3290,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -3497,7 +3497,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: zoneId
@@ -3531,7 +3531,7 @@ paths:
     put:
       tags:
         - zones
-      summary: Replace a zone
+      summary: Replaces a zone
       description: Returns a single zone
       operationId: replaceZone
       consumes:
@@ -3541,7 +3541,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: zoneId
@@ -3672,7 +3672,7 @@ paths:
     get:
       tags:
         - zones
-      summary: Find a zone by zoneId
+      summary: Finds a zone by zoneId
       description: Returns a single zone
       operationId: getZoneById
       produces:
@@ -3680,7 +3680,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: zoneId
@@ -3804,14 +3804,14 @@ paths:
     delete:
       tags:
       - zones
-      summary: Delete a zone
+      summary: Deletes a zone
       operationId: deleteZone
       produces:
       - application/json
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: zoneId
@@ -3933,7 +3933,7 @@ paths:
     patch:
       tags:
         - zones
-      summary: Update a zone
+      summary: Updates a zone
       operationId: updateZone
       consumes:
       - application/json
@@ -3942,7 +3942,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: zoneId
@@ -4108,7 +4108,7 @@ paths:
     get:
       tags:
         - zones
-      summary: Get zone clusters by project Id
+      summary: Gets zone clusters by project Id
       description: Returns an array of zoneClusters
       operationId: getZoneClusters
       produces:
@@ -4116,7 +4116,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -4306,7 +4306,7 @@ paths:
     get:
       tags:
         - zones
-      summary: Get zones count per project Id
+      summary: Gets zones count per project Id
       description: Returns a number with the number of zones
       operationId: getZonesCount
       produces:
@@ -4314,7 +4314,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: projectId
@@ -4503,7 +4503,7 @@ paths:
     post:
       tags:
       - beacons
-      summary: Add a beacon
+      summary: Adds a beacon
       operationId: addBeacon
       consumes:
       - application/json
@@ -4512,7 +4512,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - in: body
@@ -4648,12 +4648,12 @@ paths:
     get:
       tags:
       - beacons
-      summary: Get all beacons by account
+      summary: Gets all beacons by account
       operationId: getBeacons
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - in: query
@@ -4804,7 +4804,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: beaconId
@@ -4846,7 +4846,7 @@ paths:
     get:
       tags:
         - beacons
-      summary: Find a beacon by beaconId
+      summary: Finds a beacon by beaconId
       description: Returns a single beacon
       operationId: getBeaconById
       produces:
@@ -4854,7 +4854,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: beaconId
@@ -4978,14 +4978,14 @@ paths:
     delete:
       tags:
         - beacons
-      summary: Delete a beacon
+      summary: Deletes a beacon
       operationId: deleteBeacon
       produces:
       - application/json
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: beaconId
@@ -5109,7 +5109,7 @@ paths:
     put:
       tags:
       - beacons
-      summary: Update a complete beacon
+      summary: Updates a complete beacon
       operationId: replaceBeacon
       consumes:
       - application/json
@@ -5118,7 +5118,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: beaconId
@@ -5248,7 +5248,7 @@ paths:
     patch:
       tags:
         - beacons
-      summary: Update a beacon
+      summary: Updates a beacon
       operationId: updateBeacon
       consumes:
       - application/json
@@ -5257,7 +5257,7 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: 'Bearer Token. Format: Bearer {{access_token}}'
+          description: 'Bearer Token. Format: `Bearer <accessToken>`'
           required: true
           type: string
         - name: beaconId
@@ -5422,11 +5422,12 @@ definitions:
   # https://tools.ietf.org/html/rfc6902
   PatchRequest:
     type: array
+    description: An array of JSONPatch documents as defined by RFC 6902.
     items:
       $ref: "#/definitions/PatchDocument"
   PatchDocument:
     type: object
-    description: A JSONPatch document as defined by RFC 6902. 
+    description: A JSONPatch document as defined by RFC 6902.
     required:
      - "op"
      - "path"
@@ -5449,7 +5450,12 @@ definitions:
     type: object
     additionalProperties:
       type: string
-
+    example:
+      {
+        additionalProp1: string,
+        additionalProp2: string,
+        additionalProp3: string
+      }
   # polygons
   Point:
     description: A point is an object that stores spatial geographic information (i.e longitude, latitude)
@@ -5480,12 +5486,16 @@ definitions:
           default: 'circle'
         name:
           type: string
+          description: Name given to the fence.
           example: 'circle name'
         color:
           type: string
+          description: Hash code representing the color of the Geofence. For example, “#FFFFFF” is white.
           example: '#FEFEFE'
         radius:
           type: number
+          description: Double value representing the radius of a circular geofence in metres.
+          minimum: 5
           example: 10
         center:
           $ref: '#/definitions/Point'
@@ -5571,6 +5581,11 @@ definitions:
         properties:
           proximity:
             type: string
+            description: |
+              Proximity represents the approximate distance at which the Beacon will trigger:
+              * Immediate: The Beacon has to be almost touching or within an inch for the trigger to occur.
+              * Near: The Beacon can be up to approximately 6 feet away from a device for the trigger to occur.
+              * Far: The Beacon is farther than 6 feet away but still within receiving distance of the maximum range of the Beacon’s signal for the trigger to occur.
             enum:
               - Immediate
               - Near
@@ -5596,6 +5611,7 @@ definitions:
           example: 'Geoline name'
         vertices:
           type: array
+          description: A Geoline is made of two or more points. In the JSON, vertices is an array of 2 or more points, each having a latitude and longitude
           items:
             $ref: '#/definitions/Point'
           example: [{longitude: -37.812873, latitude: 144.977705}, {longitude: -37.810212, latitude: 144.983070}]
@@ -5616,12 +5632,15 @@ definitions:
           default: 'polygon'
         name:
           type: string
+          description: Name given to the fence.
           example: 'Polygon name'
         color:
           type: string
+          description: Hash code representing the color of the Geofence. For example, “#FFFFFF” is white.
           example: '#FEFEFE'
         vertices:
           type: array
+          description: A polygon is made of multiple vertices. In the JSON, vertices is an array of more than 3 points, each having a latitude and longitude.
           items:
             $ref: '#/definitions/Point'
           example: [{longitude: -37.812873, latitude: 144.977705}, {longitude: -37.810212, latitude: 144.983070}]
@@ -5642,13 +5661,17 @@ definitions:
           default: 'boundingBox'
         name:
           type: string
+          description: Name given to the fence.
           example: 'Bounding Box name'
         color:
           type: string
+          description: Hash code representing the color of the Geofence. For example, “#FFFFFF” is white.
           example: '#FEFEFE'
         northEast:
+          description: Coordinates for the north-east point of a bounding box. It consists of a latitude and longitude fields.
           $ref: '#/definitions/Point'
         southWest:
+          description: Coordinates for the south-west point of a bounding box. It consists of a latitude and longitude fields.
           $ref: '#/definitions/Point'
 
   # actions
@@ -5663,6 +5686,7 @@ definitions:
       properties:
         url:
           type: string
+          description: URL that will be opened when the device enters a zone.
           example: 'https://bluedot.io'
   Message:
     type: object
@@ -5676,9 +5700,11 @@ definitions:
       properties:
         title:
           type: string
+          description: Title of the message displayed on the device.
           example: 'A default message title'
         message:
           type: string
+          description: Body of the message displayed on the device.
           example: 'A default message'
 
   # conditions
@@ -5694,10 +5720,12 @@ definitions:
       properties:
         minimumSpeed:
           type: number
+          description: The minimum speed for the action to trigger.
           minimum: 0
           example: 0
         maximumSpeed:
           type: number
+          description: The maximum speed for the action to trigger.
           minimum: 5
           example: 5
   TravelDirection:
@@ -5712,11 +5740,13 @@ definitions:
       properties:
         fromAngle:
           type: integer
+          description: The from-angle for the action to trigger.
           minimum: 0
           maximum: 359
           example: 0
         toAngle:
           type: integer
+          description: The to-angle for the action to trigger.
           minimum: 0
           maximum: 359
           example: 10
@@ -5732,15 +5762,18 @@ definitions:
       properties:
         minimumGeofeaturesCrossed:
           type: integer
+          description: The number of Geofeatures need to be crossed.
           minimum: 2
           example: 2
         timeOutSeconds:
           type: integer
+          description: Time period within which the number of Geofeatures noted in the minimumGeofeaturesCrossed field must be crossed.
           minimum: 60
           maximum: 86400
           example: 600
         sequential:
           type: boolean
+          description: Requires that Geofeatures be crossed in sequence.
           example: true
   TimeActive:
     type: object
@@ -5754,10 +5787,12 @@ definitions:
       properties:
         fromTime:
           type: string
+          description: The start time from when the action would be triggered.
           pattern: '^(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])$'
           example: '11:30:00'
         toTime:
           type: string
+          description: The end time after when the action would not be triggered.
           pattern: '^(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])$'
           example: '21:30:00'
   DayRange:
@@ -5769,17 +5804,19 @@ definitions:
       properties:
         startDate:
           type: string
+          description: The start date from when the action should be triggered.
           format: date
           example: '2016-01-01'
         endDate:
           type: string
+          description: The end date after when the action would not be triggered.
           format: date
           example: '2017-12-30'
 
   ### schema level 2
   WebhookObject:
     type: object
-    description: A configuration object to specify details on how webhooks should be passed.
+    description: A configuration object to specify details on how webhooks should be passed. For example, a webhook can be registered to track events such as a check-in.
     properties:
       url:
         type: string
@@ -5792,11 +5829,11 @@ definitions:
          - trigger
       headers:
         type: object
-        description: Custom header sent along with the webhook request.
+        description: Custom header sent along with the webhook request. Only one header can be added for now.
         additionalProperties:
           type: string
         example:
-          header: string
+          authToken: '98f4690e-1a89-4a23-a9bf-3f8c0e7cdee9'
     required:
       - type
       - url
@@ -5893,7 +5930,7 @@ definitions:
     example: {type: 'speed', minimumSpeed: 0, maximumSpeed: 5}
   MinimumRetriggerTime:
     type: integer
-    description: The minimum time in seconds that must elapse after a zone has triggered before it is allowed to trigger again.
+    description: The minimum time in seconds that is utilized to preclude unwanted, multiple triggers within a Zone. This can be due to, for example, a user remaining stationary after a trigger.
     minimum: 60
     maximum: 3599940
     example: 600
@@ -5907,7 +5944,7 @@ definitions:
         example: '150.34565,-24.44556'
       count:
         type: number
-        description: The number of zones in a cluster
+        description: The number of zones in a cluster. This field is returned if the area has more than 500 Zones around the point.
         example: '350'
       additionalCount:
         type: boolean
@@ -5948,17 +5985,17 @@ definitions:
       nextRuleUpdateInterval:
         example: 600
         type: integer
-        description: This is how frequently the Project tries to download the latest locations configured.
+        description: A mobile device will wait for the interval to lapse before subsequently downloading the rules from the server. A longer interval will help save your users battery.
         minimum: 300
         maximum: 172800
       webhooks:
         type: array
-        description: Objects that specify details on how webhook should be passed.
+        description: A list of webhook objects that specify details on how webhook should be passed. For example, a webhook can be registered to track events such as a check-in.
         items:
           $ref: '#/definitions/WebhookObject'
       firebaseApiKey:
         type: string
-        description: optional field if using firebase
+        description: The Web API key from Firebase project settings. Using this key our backend will be able to communicate with Firebase to deliver the zones that need to be synced to your application.
   ProjectResponse:
     allOf:
     - type: object
@@ -5969,7 +6006,7 @@ definitions:
           example: ec09f506-44c8-482d-92d0-4ee57d5c42b4
     - $ref: '#/definitions/Project'
   User:
-    description: A user that may login to PointAccess or use the API.
+    description: A user that may login to Canvas or use the API.
     type: object
     properties:
       email:
@@ -6037,7 +6074,7 @@ definitions:
         $ref: '#/definitions/MinimumRetriggerTime'
       triggerOnExit:
         type: boolean
-        description: Trigger an event as the device is leaving the zone.
+        description: When a device exits a fence or the range of a beacon, a callback will be sent to the application from the SDK. By default triggerOnExit is false.
         example: true
       geofeatures:
         type: array
@@ -6078,11 +6115,13 @@ definitions:
         example: ec09f506-44c8-482d-92d0-4ee57d5c42b4
       name:
         type: string
+        description: Name of the zone.
         example: 'Example zone name'
       minimumRetriggerTime:
         $ref: '#/definitions/MinimumRetriggerTime'
       triggerOnExit:
         type: boolean
+        description: When a device exits a fence or the range of a beacon, a custom action will be triggered. By default triggerOnExit is false.
         example: true
       geofeatures:
         type: array
@@ -6098,6 +6137,8 @@ definitions:
         type: array
         items:
           type: string
+          description: custom tags
+        example: ['lines', 'borders', 'stripes']
       actions:
         type: array
         items:
@@ -6111,11 +6152,11 @@ definitions:
     properties:
       email:
         type: string
-        description: Email address of the account to login
+        description: Email address of the user for authentication.
         example: 'swagger@bluedot.io'
       password:
         type: string
-        description: Password of the account to login
+        description: Password of the user for authentication.
         example: 'password123'
   AuthenticationTokens:
     type: object
@@ -6135,11 +6176,11 @@ definitions:
       idToken:
         type: string
         description: The ID Token is a JSON Web Token (JWT) that contains user profile information (such as the user's name and email).
-        example: eyJraWQiOiJ2VnV5OXhIT00zeVBPeEwwTDFrTmN1aXBFS3Jwd0l0ekhrQ0VKUnpOOXU4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNzc1MTFjNi1hNTQ3LTQxNTgtYmY4ZC0xNzk3Mzg5ZmQ3ZmIiLCJhdWQiOiIzajJldjB1bjZnbnY4NGczM25zZGRoMmJqdSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjAxNWZiMmY5LThhMjItMTFlOC1iMTJkLTc5NDZhZDYxZmM2MyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTMxODczOTI5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTJfOFZLZVBhRUxlIiwibmlja25hbWUiOiIyM2EwMWFmMC0yMzJhLTQ1MTgtOWMwZS0zMjNmYjc3M2Y1ZWYiLCJjb2duaXRvOnVzZXJuYW1lIjoicnlhbkBibHVlZG90LmlvIiwiZXhwIjoxNTMxODc3NTI5LCJpYXQiOjE1MzE4NzM5MjksImVtYWlsIjoicnlhbkBibHVlZG90LmlvIn0.QQodxfgLyfvXoTDFrLEEu7cmUv1p-NLmV1--R8QfkKsSJ2LreJPBmmvhjEf5pYFFVTSuBfDITGxxKQrVbTLrLeWWFsWXxyRWBleNSVwwywGJPaS3Ra26EHjicwMHDY3Ln8B8eJ18oTcj_ZmAf_5z8OXhGxfGngdUxzbRN646OY-0Pki45HQ8e50uKGIHj_RRhWyyRxf27SvFEHAjbUA7QfcbGs1HA1b6oOc7VTCR6Qm8MgYw6jTbwl-8HrIrVicvwPwawmsP59tOsOa-9suBBGw7p2L9cmkBJGEKnhjiM57TXzGFmLKR7-HpxInkITfAry2N_UmzkemL_axbNE38zg
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
       accessToken:
         type: string
         description: An Access Token is a credential that can be used by an application to access an API.
-        example: eyJraWQiOiI2T09XbTZDNXRhQmNWbXJ5ZCtFSVZXR1VsT29SN1Jub1NmaXBDVXp0SzZRPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNzc1MTFjNi1hNTQ3LTQxNTgtYmY4ZC0xNzk3Mzg5ZmQ3ZmIiLCJldmVudF9pZCI6IjAxNWZiMmY5LThhMjItMTFlOC1iMTJkLTc5NDZhZDYxZmM2MyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1MzE4NzM5MjksImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMi5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMl84VktlUGFFTGUiLCJleHAiOjE1MzE4Nzc1MjksImlhdCI6MTUzMTg3MzkyOSwianRpIjoiZTgxZGEzMjUtOTU3Yi00NTUwLWFhYjktMjE0NTlmYzMxZTc1IiwiY2xpZW50X2lkIjoiM2oyZXYwdW42Z252ODRnMzNuc2RkaDJianUiLCJ1c2VybmFtZSI6InJ5YW5AYmx1ZWRvdC5pbyJ9.kpdSUqyCZ8VkGtSkgYF7XFGOLSsKCtQ9auK4iQaH90FoOZFK16DmRsZWUMcLDZ64txjjF9_qTGY5I8hAFGsU3GFirnkhWjPGzLvixoMqOFF4enu2MA4Z0LmEItLZyYgSaJIn5HXH57aNCKaeU3QnM7PJVg5NHBTO6MorghPA17_fPbiT96as8-5JQk7V7JoMIAOKYrl8cMDvajrfN3v_Da1N6lKqAi09biKJBMo7j2I7ac8eFxJ1P69FXcWT-FkUTb64BVaIOs2FJEt-7WTFS_OJyuJ1GYv508CzODA62BOvz6uJNJHfvinqy5BIeImsKqpIe-5sux-14p-dRm9dRw
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
       expiresIn:
         type: number
         example: 3600
